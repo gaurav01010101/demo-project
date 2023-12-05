@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: make dir
+      file:  
+        path: /tmp/ganesh
+          # state: directory
+        state: absent
+        owner: root
+        mode: "777"

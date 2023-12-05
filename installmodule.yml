@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: Install MySQL Server
+      ansible.builtin.apt:
+       name: mysql-server
+       state: present

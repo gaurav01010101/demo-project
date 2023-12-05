@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: create a directory
+      file:  
+        path: /tmp/ganesh
+        state: absent
+        owner: root
+        mode: "644"

@@ -1,0 +1,19 @@
+#facts file
+#check to what to enter
+# to run this files   ansible-playbook filename.yml
+
+- hosts: all
+  tasks:
+    - file:
+        path: /tmp/abc
+        state: touch
+   
+   
+   
+   
+   
+   
+    # - ansible.builtin.apt:
+    #  name: python3
+    #  state: present
+    # when: ansible_distribution == "ubuntu"

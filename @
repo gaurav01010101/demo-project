@@ -1,0 +1,5 @@
+- hosts: all
+  tasks: 
+  apt:
+    name: ngnix
+    state: present

@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+  - copy:
+      src: /etc/passwd
+      dest: /tmp
+    tags: dev-team
+
+  - file:
+      path: /tmp/abc
+      state: directory
+    tags: dev-team
+
+  - apt:
+      name: httpd
+      state: directory
+    tags: prod-team
+
+
+      #not running properly shevk it first

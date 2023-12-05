@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "PermitRootLogin yes"
+        state: present
+      notify: mynotification
+
+    - lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "PermitRootLogin no"
+        state: absent
+      notify: mynotificationl
+
+  handlers:
+    - name: mynotification1
+      service:
+        name: sshd
+        state: reload

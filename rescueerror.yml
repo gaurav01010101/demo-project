@@ -1,0 +1,21 @@
+# we resolve blocks and rscue file 
+# its create automatic files and shows error
+
+- hosts: all
+  tasks:
+    - block:
+      - lineinfile:
+           path: /tmp/rahul
+           line: "hello ansible"
+      rescue:
+        - file:
+            path: /tmp/rahul
+            state: touch
+        - lineinfile:
+            path: /tmp/rahul
+            line: "hello neww"
+      always:
+        - apt:
+            name: python3
+            state: present
+

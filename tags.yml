@@ -1,0 +1,16 @@
+- hosts: all
+  tasks:
+  - copy: 
+      src: /etc/passwd
+      dest: /tmp
+    tags: dev-team
+
+  - file:
+      path: /tmp/abc
+      state: directory
+    tags: dev-team
+
+  - yum:
+      name: httpd
+      state: directory
+    tags: prod-team
