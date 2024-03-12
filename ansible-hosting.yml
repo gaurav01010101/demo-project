@@ -1,0 +1,21 @@
+- hosts: webserver
+  tasks:
+    - yum:
+        name: nginx
+        state: latest
+    - service:
+        name: nginx
+        state: started
+    - file:
+        path: /usr/share/nginx/html/index.html
+        state: absent
+    - file:
+        path: /usr/share/nginx/html/index.html
+        state: touch
+    - lineinfile:
+        path: /usr/share/nginx/html/index.html
+        line: where are you ///////
+    - package:
+        name: wget
+        state: latest
+    - command: wget https://www.free-css.com/assets/files/free-css-templates/download/page296/klinik.zip
